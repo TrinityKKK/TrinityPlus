@@ -1,0 +1,9 @@
+{
+  "games": [
+    {
+      "name": "Game",
+      "path": "./gs/osu/index.html",
+      "image": "./gs/osu/logo.png"
+    }
+  ]
+}
