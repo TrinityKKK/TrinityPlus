@@ -1,6 +1,6 @@
 # Trinity+
 
-Trinity+ Is a Front-End Made with Ultraviolet
+Trinity+ Is a Front-End Made with uv
 
 ## Installation
 It has a shell file already, but in-case you're installing it where you can't run shell just do the following commands:
