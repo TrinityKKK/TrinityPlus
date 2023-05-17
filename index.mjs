@@ -2,7 +2,6 @@ import createBareServer from "@tomphttp/bare-server-node";
 import { fileURLToPath } from "node:url";  
 import http from 'http';
 import fs from 'fs';
-import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 const bare = createBareServer("/bare/");
 const app = connect();
 import serveStatic from "serve-static";
@@ -64,10 +63,6 @@ function shouldRouteRh(req) {
 
   app.use((req, res, next) => {
     if(bare.shouldRoute(req)) bare.routeRequest(req, res); else next();
-  });
-
-  app.use('/uv', (req, res, next) => {
-    serveStatic(uvPath)(req, res, next);
   });
   app.use((req, res, next) => {
     if (shouldRouteRh(req)) {
