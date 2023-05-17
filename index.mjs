@@ -61,19 +61,7 @@ function shouldRouteRh(req) {
       catch (error) {}
     }
   const rammerheadSession = /^\/[a-z0-9]{32}/;
-  app.use((req, res, next) => {
-    const url = req.url;
-    if (url.endsWith('.html')) {
-      res.statusCode = 404;
-      next();
-    } else {
-      if (url.endsWith('/')) {
-        res.statusCode = 404;
-        next();
-      } else {
-      next();
-    }
-  }});
+
   app.use((req, res, next) => {
     if(bare.shouldRoute(req)) bare.routeRequest(req, res); else next();
   });
@@ -88,7 +76,19 @@ function shouldRouteRh(req) {
       next();
     }
   });
-  
+  app.use((req, res, next) => {
+    const url = req.url;
+    if (url.endsWith('.html')) {
+      res.statusCode = 404;
+      next();
+    } else {
+      if (url.endsWith('/')) {
+        res.statusCode = 404;
+        next();
+      } else {
+      next();
+    }
+  }});
   app.use((req, res, next) => {
     if (req.upgrade) {
       routeRhUpgrade(req, req.socket, req.head);
