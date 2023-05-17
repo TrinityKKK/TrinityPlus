@@ -1,12 +1,16 @@
 {
   "dependencies": {
-    "node-static": "^0.7.11"
+    "@tomphttp/bare-server-node": "^1.2.5",
+    "connect": "^3.7.0",
+    "node-static": "^0.7.11",
+    "serve-static": "^1.15.0",
+    "rammerhead": "https://github.com/Ruby-Network/rammerhead/releases/download/v1/rammerhead-2.tgz",
+    "@titaniumnetwork-dev/ultraviolet": "^1.0.11"
   },
   "name": "uv-app",
   "version": "1.0.0",
   "description": "Ultraviolet instance",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
