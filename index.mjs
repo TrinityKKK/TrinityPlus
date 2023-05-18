@@ -14,9 +14,6 @@ const routes = {
     '/apps': 'apps.html',
     '/': 'index.html'
   };
-  app.use('/uv', (req, res, next) => {
-    serveStatic(uvPath)(req, res, next);
-  });
 function handleRoutes(req, res, next) {
     const real = routes[req.url];
     if (real) {
